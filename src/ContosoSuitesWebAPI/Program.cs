@@ -62,6 +62,7 @@ app.MapGet("/", async () =>
 
 // Retrieve the set of hotels from the database.
  // Retrieve the set of hotels from the database.
+ // Retrieve the set of hotels from the database.
  app.MapGet("/Hotels", async () => 
  {
      var hotels = await app.Services.GetRequiredService<IDatabaseService>().GetHotels();
@@ -87,6 +88,7 @@ app.MapGet("/", async () =>
  })
      .WithName("GetRecentBookingsForHotel")
      .WithOpenApi();
+
 
 // This endpoint is used to send a message to the Azure OpenAI endpoint.
 app.MapPost("/Chat", async Task<string> (HttpRequest request) =>
